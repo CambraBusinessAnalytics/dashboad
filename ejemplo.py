@@ -58,7 +58,7 @@ card_ventas_hoy = dbc.Card(
         html.H3(f"UM$ {ventas_hoy:,.0f}".replace(",", "."), className="card-text")
     ]),
     className="text-center shadow-sm",
-    style={"width": "20rem"}
+    style={"width": "100%"}
 )
 
 card_ventas_semana = dbc.Card(
@@ -67,7 +67,7 @@ card_ventas_semana = dbc.Card(
         html.H3(f"UM$ {ventas_semana:,.0f}".replace(",", "."), className="card-text")
     ]),
     className="text-center shadow-sm",
-    style={"width": "20rem"}
+    style={"width": "100%"}
 )
 
 card_ventas_mes = dbc.Card(
@@ -76,10 +76,8 @@ card_ventas_mes = dbc.Card(
         html.H3(f"UM$ {ventas_mes:,.0f}".replace(",", "."), className="card-text")
     ]),
     className="text-center shadow-sm",
-    style={"width": "20rem"}
+    style={"width": "100%"}
 )
-
-
 
 app = Dash(external_stylesheets=[dbc.themes.LUX])
 server = app.server
@@ -95,8 +93,6 @@ app.layout = html.Div([
         html.H3("Análisis Comercial", style={'text-align': 'center', 'margin': '0'})
     ], style={'display': 'flex', 'align-items': 'center', 'justify-content': 'center'}),
 
-
-
     html.Hr(),
 
     # Fila para los botones y el date picker
@@ -107,11 +103,12 @@ app.layout = html.Div([
                 dbc.Button("Clientes", id="clientes-btn", n_clicks=0, style={'margin-right': '10px'}),
                 dbc.Button("Productos", id="producto-btn", n_clicks=0),
             ], style={'text-align': 'left'}),
-            width=6
+            width=12, md=6
         ),
         dbc.Col(
-        html.Img(src='/assets/CAMBRA.png', 
-         style={'height': '60px', 'margin-right': '40px'}),width=2
+            html.Img(src='/assets/CAMBRA.png', 
+            style={'height': '60px', 'margin-right': '40px'}),
+            width=12, md=2
         ),
         dbc.Col(
             dcc.DatePickerRange(
@@ -123,32 +120,33 @@ app.layout = html.Div([
                 start_date_placeholder_text='Inicio',
                 end_date_placeholder_text='Fin',
             ),
-            md=4, style={'text-align': 'right'}
+            width=12, md=4, style={'text-align': 'right'}
         ),
-    ], style={'margin-top': '10px',}),
+    ], style={'margin-top': '10px'}),
 
     html.Hr(),
 
+    # Ajusta las columnas para pantallas pequeñas
     dbc.Row([
-        dbc.Col(card_ventas_hoy, width="auto"),
-        dbc.Col(card_ventas_semana, width="auto"),
-        dbc.Col(card_ventas_mes, width="auto")
+        dbc.Col(card_ventas_hoy, width=12, md=4),
+        dbc.Col(card_ventas_semana, width=12, md=4),
+        dbc.Col(card_ventas_mes, width=12, md=4)
     ], className="justify-content-center"),
-    
+
     html.Hr(),
 
     # Fila de gráficos y cuadro de texto
     dbc.Row([
-        dbc.Col(dcc.Graph(id='line-plot', figure=fig_1), md=4),
-        dbc.Col(dcc.Graph(id='pie-plot', figure=fig_2), md=4),
-        dbc.Col(dcc.Graph(id='segmento-plot', figure=fig_3), md=4)
+        dbc.Col(dcc.Graph(id='line-plot', figure=fig_1, responsive=True), width=12, md=4),
+        dbc.Col(dcc.Graph(id='pie-plot', figure=fig_2, responsive=True), width=12, md=4),
+        dbc.Col(dcc.Graph(id='segmento-plot', figure=fig_3, responsive=True), width=12, md=4)
     ]),
 
     html.Hr(),
 
     dbc.Row([
-        dbc.Col(dcc.Graph(id='box-plot', figure=fig_4), md=4),
-            # Fila para el DataTable
+        dbc.Col(dcc.Graph(id='box-plot', figure=fig_4, responsive=True), width=12, md=4),
+        # Fila para el DataTable
         dbc.Col(
             dash_table.DataTable(
                 id='ventas-table',
@@ -159,11 +157,10 @@ app.layout = html.Div([
                 filter_action='native',
                 sort_action='native',
             ),
-            width=8  # Asegúrate de asignar el ancho aquí para que ocupe todo el espacio disponible
+            width=12, md=8  # Asegúrate de asignar el ancho aquí para que ocupe todo el espacio disponible
         )
     ], style={'margin-top': '10px'})
-    ]),
-
+])
 
 
 
