@@ -546,38 +546,7 @@ if __name__ == '__main__':
     app.run_server(port=8056)
 
 
-# In[70]:
 
-
-frecuencia = dff.groupby('IDClteDireccion').size().reset_index(name='frecuencia')
-Monto_Comprado = dff.groupby('IDClteDireccion')['SubtotaliVA'].sum().reset_index(name='monto_comprado')
-Kilos_Comprado = dff.groupby('IDClteDireccion')['Kilos'].sum().reset_index(name='kilos_comprados')
-Productos_comprados = dff.groupby('IDClteDireccion')['Producto_Linea'].nunique().reset_index(name='productos_distintos')
-Cantidad_Comprada = dff.groupby('IDClteDireccion')['Qty'].sum().reset_index(name='cantidad_comprada')
-
-
-# In[75]:
-
-
-clientes = pd.merge(frecuencia, Monto_Comprado, on='IDClteDireccion')
-clientes = pd.merge(clientes, Kilos_Comprado, on='IDClteDireccion')
-clientes = pd.merge(clientes, Productos_comprados, on='IDClteDireccion')
-clientes = pd.merge(clientes, Cantidad_Comprada, on='IDClteDireccion')
-
-
-# In[76]:
-
-
-clientes.head()
-
-
-# In[69]:
-
-
-Monto_Comprado.head()
-
-
-# In[ ]:
 
 
 
