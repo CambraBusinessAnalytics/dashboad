@@ -99,10 +99,10 @@ app.layout = html.Div([
     dbc.Row([
         dbc.Col(
             html.Div([
-                dbc.Button("General", id="general-btn", n_clicks=0, style={'margin-right': '10px', 'margin-left':'20px'}),
+                dbc.Button("General", id="general-btn", n_clicks=0, style={'margin-right': '10px', 'margin-left':'10px'}),
                 dbc.Button("Clientes", id="clientes-btn", n_clicks=0, style={'margin-right': '10px'}),
                 dbc.Button("Productos", id="producto-btn", n_clicks=0),
-            ], style={'text-align': 'left'}),
+            ], style={'display': 'flex', 'justify-content': 'left'}),
             width=12, md=6
         ),
         dbc.Col(
@@ -161,9 +161,6 @@ app.layout = html.Div([
         )
     ], style={'margin-top': '10px'})
 ])
-
-
-
 
 @app.callback(
     [Output('line-plot', 'figure'),
