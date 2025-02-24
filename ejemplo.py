@@ -342,7 +342,7 @@ def update_dashboard(general_clicks, clientes_clicks, producto_clicks, start_dat
                 ]
 
         # Retornar los outputs en el orden definido, incluyendo la vista previa de datos filtrados
-        return fig_1, fig_2, fig_3, fig_4, data_table
+        return fig_1, fig_2, fig_3, fig_4, data_table, columns
     
 #-----------------------------------------------------------------------------------------------------------------------------------
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -425,7 +425,7 @@ def update_dashboard(general_clicks, clientes_clicks, producto_clicks, start_dat
 
 
         # Retornar los outputs en el orden definido, incluyendo la vista previa de datos filtrados
-        return fig_1, fig_2, fig_3, fig_4, data_table
+        return fig_1, fig_2, fig_3, fig_4, data_table, columns
     
 
 #------------------------------------------------------------------------------------------------------------------------------------------
@@ -508,7 +508,7 @@ def update_dashboard(general_clicks, clientes_clicks, producto_clicks, start_dat
         ]
 
         # Retornar los outputs en el orden definido, incluyendo la vista previa de datos filtrados
-        return fig_1, fig_2, fig_3, fig_4, data_table
+        return fig_1, fig_2, fig_3, fig_4, data_table, columns
 
 if __name__ == '__main__':
     app.run_server()
