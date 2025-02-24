@@ -12,16 +12,13 @@ from datetime import datetime
 
 # In[32]:
 
-
 df=pd.read_csv('ejemplo.csv', index_col=0)
 dff=df.copy()
 dff['fac_fecha'] = pd.to_datetime(dff['fac_fecha']) 
 dff.loc[:, 'fecha_sin_hora'] = dff['fac_fecha'].dt.date
 
-df_fig1 = dff.groupby(['fac_fecha', 'Cluster'])['SubtotaliVA'].sum().reset_index()
-
-
-# In[ ]:
+df_fig1 = dff.groupby(['fac_fecha', 'Vendedor_Nombre'])['SubtotaliVA'].sum().reset_index()
+df_fig1b = dff.groupby(['fac_fecha', 'Cluster'])['SubtotaliVA'].sum().reset_index()
 
 
 
