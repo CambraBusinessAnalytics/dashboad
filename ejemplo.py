@@ -501,7 +501,7 @@ def update_dashboard(general_clicks, clientes_clicks, producto_clicks, start_dat
             {'name': 'Producto', 'id': 'Producto_Linea'},
             {'name': 'soporte', 'id': 'soporte'},
             {'name': 'Penetracion', 'id': 'penetracion'},
-            {'name': 'Frecuencia', 'id': 'frecuencia'}
+            {'name': 'Frecuencia', 'id': 'frecuencia'},
             {'name': 'Monto', 'id': 'SubtotaliVA'},
             {'name': 'Kilos', 'id': 'kilos'},
             {'name': 'Ranking', 'id': 'ranking'}
