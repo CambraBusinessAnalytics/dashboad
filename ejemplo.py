@@ -419,10 +419,10 @@ def update_dashboard(general_clicks, clientes_clicks, producto_clicks, start_dat
         # Para la tabla se usan los datos filtrados
         data_table = clientes.to_dict('records')
         columns=[
-            {'name': 'Cliente', 'id': 'IDClteDireccion'}
+            {'name': 'Cliente', 'id': 'IDClteDireccion'},
             {'name': 'Recencia', 'id': 'Recencia'},
             {'name': 'Duracion', 'id': 'Duracion'},
-            {'name': 'Frecuencia', 'id': 'frecuencia'}
+            {'name': 'Frecuencia', 'id': 'frecuencia'},
             {'name': 'Monto', 'id': 'monto_comprado'},
             {'name': 'Kilos', 'id': 'kilos_comprados'},
             {'name': 'Productos Distintos', 'id': 'productos_distintos'},
@@ -504,7 +504,7 @@ def update_dashboard(general_clicks, clientes_clicks, producto_clicks, start_dat
         # Para la tabla se usan los datos filtrados
         data_table = productos.to_dict('records')
         columns=[
-            {'name': 'Producto', 'id': 'Producto_Linea'}
+            {'name': 'Producto', 'id': 'Producto_Linea'},
             {'name': 'soporte', 'id': 'soporte'},
             {'name': 'Penetracion', 'id': 'penetracion'},
             {'name': 'Frecuencia', 'id': 'frecuencia'}
