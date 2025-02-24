@@ -91,7 +91,7 @@ card_ventas_mes = dbc.Card(
 
 
 app = Dash(external_stylesheets=[dbc.themes.LUX])
-
+server = app.server
 
 fig_1 = {}
 fig_2 = {}
