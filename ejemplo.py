@@ -543,7 +543,7 @@ def update_dashboard(general_clicks, clientes_clicks, producto_clicks, start_dat
         return fig_1, fig_2, fig_3, fig_4, data_table
 
 if __name__ == '__main__':
-    app.run_server(port=8056)
+    app.run_server()
 
 
 
