@@ -6,14 +6,8 @@
 
 import pandas as pd
 import numpy as np
-import os
 from datetime import datetime
 
-
-# In[2]:
-
-
-os.chdir("C:\\Users\\Ruth Rolón Aranda\\Documents\\Cambra\\Analisis para la consultoria\\ejemplo dash")
 
 
 # In[32]:
