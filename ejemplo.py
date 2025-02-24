@@ -47,32 +47,6 @@ duracion['Duracion'] = duracion['Antiguedad'] - duracion['Recencia']
 duracion = duracion[['IDClteDireccion', 'Recencia', 'Antiguedad','Duracion']]
 
 
-# In[77]:
-
-
-duracion
-
-
-# In[51]:
-
-
-frecuencia.head()
-
-
-# In[ ]:
-
-
-
-
-
-# In[33]:
-
-
-dff.head()
-
-
-# In[ ]:
-
 
 import dash
 from dash import dcc, html, Input, Output, State, Dash
