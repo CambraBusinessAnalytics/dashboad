@@ -103,7 +103,7 @@ app.layout = html.Div([
                 dbc.Button("Clientes", id="clientes-btn", n_clicks=0, style={'margin-right': '10px'}),
                 dbc.Button("Productos", id="producto-btn", n_clicks=0),
             ], style={'display': 'flex', 'justify-content': 'left'}),
-            width=12, md=6
+            width=12, md=6, 
         ),
         dbc.Col(
             html.Img(src='/assets/CAMBRA.png', 
@@ -137,15 +137,15 @@ app.layout = html.Div([
 
     # Fila de gráficos y cuadro de texto
     dbc.Row([
-        dbc.Col(dcc.Graph(id='line-plot', figure=fig_1, responsive=True), width=12, md=4),
-        dbc.Col(dcc.Graph(id='pie-plot', figure=fig_2, responsive=True), width=12, md=4),
-        dbc.Col(dcc.Graph(id='segmento-plot', figure=fig_3, responsive=True), width=12, md=4)
+        dbc.Col(dcc.Graph(id='line-plot', figure=fig_1, responsive=True), width=12, md=4, sm=12),
+        dbc.Col(dcc.Graph(id='pie-plot', figure=fig_2, responsive=True), width=12, md=4, sm=12),
+        dbc.Col(dcc.Graph(id='segmento-plot', figure=fig_3, responsive=True), width=12, md=4, sm=12)
     ]),
 
     html.Hr(),
 
     dbc.Row([
-        dbc.Col(dcc.Graph(id='box-plot', figure=fig_4, responsive=True), width=12, md=4),
+        dbc.Col(dcc.Graph(id='box-plot', figure=fig_4, responsive=True), width=12, md=4, sm=12),
         # Fila para el DataTable
         dbc.Col(
             dash_table.DataTable(
@@ -157,7 +157,7 @@ app.layout = html.Div([
                 filter_action='native',
                 sort_action='native',
             ),
-            width=12, md=8  # Asegúrate de asignar el ancho aquí para que ocupe todo el espacio disponible
+            width=12, md=8, sm=12,  # Asegúrate de asignar el ancho aquí para que ocupe todo el espacio disponible
         )
     ], style={'margin-top': '10px'})
 ])
